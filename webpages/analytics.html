@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../design.css">
+    <link rel="icon" type="image/x-icon" href="../images/ftalogo.png">
+    <link rel="stylesheet" href="https://lucide.dev/icons/">
+
+    <title>Dashboard - FTA</title>
+</head>
+<body>
+    <!-- Navigational Bar -->
+    <span class="material-symbols-rounded menu" onclick="showMenu()">menu</span> 
+    <div class="sidebar">
+        <!-- Logo -->
+       
+
+        <!-- User Profile -->
+        <div class="user">
+            <img class="profile-pic" src="../images/profile.png" alt="">
+            <h2 id="name">Elpie Landoy</h2>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls" id = "psidebar">
+            <a href="../dashboard.html"><span class="material-symbols-rounded">grid_view</span><p>Dashboard</p></a>
+            <a href="cooperative.html" ><span class="material-symbols-rounded ">handshake</span><p>Cooperative</p></a>
+            <a href="analytics.html"class="active"><span class="material-symbols-rounded active-icon">pie_chart</span><p>Analytics</p></a>
+            <a href="notification.html"><span class="material-symbols-rounded">notifications</span><p>Notifications</p></a>
+            <!-- <a href="#"><span class="material-symbols-rounded">chat</span><p>Messages</p><p id="count">10</p></a> -->
+            <a href="#"><span class="material-symbols-rounded">settings</span><p>Settings</p></a>
+            <a href="../index.html"><span class="material-symbols-rounded">logout</span><p>Log out</p></a>
+        </div>
+    </div>
+    <div class="psidebar" id="sidebar">
+        <!-- Logo -->
+        <span class="material-symbols-rounded hide"  onclick="hideMenu()">close</span>
+        <div class="user">
+            <img class="profile-pic" src="../images/profile.png" alt="">
+            <h2 id="name">Elpie Landoy</h2>
+        </div>
+        <!-- Controls -->
+        <div class="controls">
+            <a href="../dashboard.html"><span class="material-symbols-rounded">grid_view</span><p>Dashboard</p></a>
+            <a href="cooperative.html" ><span class="material-symbols-rounded ">handshake</span><p>Cooperative</p></a>
+            <a href="analytics.html"class="active"><span class="material-symbols-rounded active-icon">pie_chart</span><p>Analytics</p></a>
+            <a href="notification.html"><span class="material-symbols-rounded">notifications</span><p>Notifications</p></a>
+            <!-- <a href="#"><span class="material-symbols-rounded">chat</span><p>Messages</p><p id="count">10</p></a> -->
+            <a href="#"><span class="material-symbols-rounded">settings</span><p>Settings</p></a>
+            <a href="../index.html"><span class="material-symbols-rounded">logout</span><p>Log out</p></a>
+        </div>
+    </div>        
+     <!-- Main Content -->
+     <div class="container">
+        <!-- Head -->
+        <div class="head">
+            <h1>Analytics</h1>
+            <div class="head-control">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <span class="material-symbols-rounded">search</span>
+                </div>
+                <input id="date" type="date">
+                <a><p>Edit</p><span class="material-symbols-rounded">edit</span></a>
+                <!-- <a id="backBtn"><span class="material-symbols-rounded">arrow_back</span></a> -->
+            </div>
+        </div>
+
+
+        
+        <!-- Content -->
+        <div class="analytics">
+            <div class="coop-summary">
+                <div class="farmers">
+                    <img src="../images/1.png" alt="" >
+                    <div>
+                        <p>Overall Registered<br><span class="highlight">Farmers</span></p>
+                        <h2>74634</h2>
+                    </div>
+                </div>
+    
+                <div class="total-users">
+                    <img src="../images/2.png" alt="" >
+                    <div>
+                        <p>Overall Registered<br><span class="highlight">Farmers</span></p>
+                        <h2>24563</h2>
+                    </div>
+                </div>
+    
+                <div class="totalx">
+                    <img src="../images/3.png" alt="">
+                    <div>
+                        <p>Overall Produced<br><span class="highlight">Crops</span></p>
+                        <h2>20754</h2> 
+                    </div>
+
+                </div>
+            </div>
+            
+
+            <div class="insights">
+                <div class="healthy">
+                    <div class="middle">
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>70%</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h3>Number<br>of Inqueries</h3>
+                            <h2><span id="count">5360</span> Crops</h2>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 2 months</small>
+                </div>
+
+                <div class="unhealthy">
+                    <div class="middle">
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h3>Overall<br>Rejected</h3>
+                            <h2><span id="count">600</span> Crops</h2>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 2 months</small>
+                </div>
+
+                <div class="under-observation">
+                    <div class="middle">
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>20%</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h3>Outside the<br>Province Orders</h3>
+                            <h2><span id="count">1200</span> Crops</h2>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 2 months</small>
+                </div>
+            </div>
+            <div class="linegraph">
+                <canvas id="line-chart" height="450"></canvas>
+            </div>
+            <div class="bar-donut">
+                <div class="bar"><canvas id="bar-chart" height="450"></canvas></div>
+                <div class="donut"><canvas id="doughnut-chart" height="450"></canvas></canvas></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="../mychart.js"></script>
+    
+    <script src="../script.js"></script>
+
+</body>
+</html>

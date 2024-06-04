@@ -1,0 +1,1571 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap');
+
+/*--------------------------------------SIDE BAR-------------------------------------- */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--font-color);
+    letter-spacing: 1px;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+
+    --primary-color: #29387C;
+    --secondary-color: #4B60BD;
+    --accent-color: #FEF200;
+    --base-color: #002768;
+    --background-color: rgba(134, 144, 233, 0.15);
+    --shadow: 0px 2px 10px -2px rgba(0, 4, 255, 0.070);
+    --shadow2: 0px 10px 15px -3px rgba(0, 4, 255, 0.070);
+    --active-background: rgba(134, 144, 233, 0.05);
+    --active: rgb(0, 81, 255);
+
+    --font-size: 1rem;
+    --font-color: #333333;
+    --gap: 20px;
+
+    --radius: 2rem;
+    --border: 2px solid rgba(134, 144, 233, 0.25);
+
+    --transition: 0.3s ease;
+}
+
+p{
+    font-size: var(--font-size);
+    color: var(--font-color)S;
+}
+
+.material-symbols-rounded{
+    color: var(--font-color);
+}
+
+body{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    width: 100%;
+    height: 100vh;
+    background: var(--background-color);
+    overflow-x: hidden;
+}
+
+/* Navigational Bar */
+
+.sidebar{
+    background: white;
+    width: 330px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow2);
+    /* justify-content: space-between; */
+}
+
+/* Logo */
+.sidebar .logo{
+    width: 275px;
+    
+}
+
+/* User Profile*/
+.sidebar .user{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.sidebar .user .profile-pic{
+    width: 130px;
+    border-radius: 100px;
+    padding: 3px;
+    border: 5px solid var(--active)
+}
+
+.sidebar .user h2{
+    font-weight: 600;
+    color: var(--font-color);
+    font-family: 25px;
+}
+
+/* Controls */
+
+/* .material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+} */
+
+.sidebar .controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+
+}
+
+.controls a{
+    color: rgb(68, 68, 68);
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 400;
+    gap: 20px;
+    padding: 15px 0 15px 38px;
+    border-left: 6px solid rgba(0, 0, 255, 0);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.controls a p{
+    font-size: 15px;
+}
+
+
+
+.controls span{
+    font-size: 25px;
+    color: rgb(68, 68, 68);
+    /* color: #6a6a6a; */
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.controls #count{
+    position: absolute;
+    right: 20px;
+    background-color: rgb(255, 0, 119);
+    padding: 0 2px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    border-radius: 50%;
+    letter-spacing: 0;
+}
+
+/* Active */
+.controls .active{
+    color: var(--active);
+    font-weight: 600;
+    background-color: var(--active-background);
+    border-left: 6px solid var(--active);
+    transition: var(--transition);
+}
+
+.controls .active-icon{
+    color: var(--active);
+    transition: var(--transition);
+
+}
+
+.controls a:hover :where(p, span){
+    color: var(--active);
+
+}
+
+.psidebar{
+    display: none;
+}
+.menu{
+    display: none;
+}
+@media (max-width: 680px){
+    body{
+        padding: 0;
+        flex-direction: column;
+    }
+    .menu{
+        display: flex;
+        position: fixed;
+        top: 1rem;
+        left:1rem;
+        z-index: 99;
+    }
+    .sidebar{
+        display: none;
+    }
+    .psidebar{
+        position: fixed;
+        top: 0;
+        left: -17rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 230px;
+        height: 100%;
+        backdrop-filter: blur(60px);
+        border-radius: 2rem 0 0 2rem;
+        z-index: 9999;
+        padding: 1rem;
+        gap: 4rem;
+        transition: var(--transition);
+        background-color: #fff;
+    }
+    .psidebar .controls{
+        padding: 0;
+    }
+    
+    .psidebar .controls a{
+        padding: 0.8rem;
+        gap: .8rem;
+    }
+    .psidebar .controls a p{
+        font-size: .8rem;
+    }
+
+    .psidebar .hide{
+        width: 100%;
+        text-align: left;
+    }
+    .psidebar .logo{
+        width: 100%;
+    }
+    .psidebar .user .profile-pic{
+        width: 130px;
+        border-radius: 100px;
+        padding: 3px;
+        border: 5px solid var(--active)
+    }
+    .psidebar .user{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .psidebar .user h2{
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
+
+/* Main Content */
+.container{
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow2);
+}
+
+/* Head */
+.head{
+    display: flex;
+    padding: 15px 30px 0 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+.head h1{
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 50px;
+}
+.head .head-control{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: max-content;
+}
+.head-control .search{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.head-control .search input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 40px 5px 15px;
+    outline: none;
+    border: none;
+    background-color: white;
+    border: var(--border);
+    border-radius: 100px;
+    height: 50px;
+    width: 110px;
+    transition: var(--transition);
+}
+.head-control .search span{
+    position: absolute;
+    right: 10px;
+}
+.head-control .search input:focus{
+    width: 100%;
+    border: 2px solid var(--secondary-color);
+    box-shadow: var(--shadow2);
+}
+
+
+.head-control a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 100px;
+    gap: 8px;
+    height: 50px;
+    width: auto;
+    transition: var(--transition);
+}
+
+
+.head-control a:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgba(134, 144, 233, 0.2);
+}
+
+#date{
+    border: var(--border);
+    padding: 12px;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+input[type="date"]:focus {
+  border-color: blue; /* Blue border color when focused */
+}
+
+.head-control a{
+    background-color: var(--active-background);
+    transition: var(--transition);
+}
+.head-control a :where(p, .material-symbols-rounded){
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+@media (max-width: 680px) {
+    .container {
+        padding: inherit;
+        margin-top: 100px;
+        gap: 0px;
+    }
+
+    .container .head {
+        position: fixed;
+        top: 0rem;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        z-index: 10;
+        padding: -10rem;
+    }
+
+    .container .head h1 {
+        font-size: 2rem;
+    }
+    
+
+    .container .head input[type="date"], .container .head a {
+        display: none;
+    }
+
+    .coop-summary .farmers {
+        margin-top: 50px;
+        margin-bottom: 10px;
+        flex-direction: column;
+        align-items: center; /* Ensure content is centered in mobile view */
+    }
+
+    .coop-summary .total-users, .totalx {
+        margin-top: 22px;
+        flex-direction: column;
+        align-items: center; /* Ensure content is centered in mobile view */
+    }
+
+
+    .corn img, .copra img {
+        margin-right: 5px; 
+    }
+}
+/* ----------------------- Cooperative ----------------------- */
+
+.content{
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Cooperative Container */
+.content .coop-con{
+    position: relative;
+    flex: 1 0 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 440px;
+    height: 375px;
+    background-color: white;
+    border-radius: 15px;
+    border: var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.content .coop-con:hover{
+    scale: 1.02;
+    
+}
+
+.coop-con .color{
+    display: flex;
+    justify-content: end;
+    padding: 15px 5px;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primary-color);
+}
+
+.color span{
+    font-size: 45px;
+    font-weight: 900;
+    color: white;
+}
+
+.coop-con .coop-profile{
+    position: absolute;
+    top: 23.3%;
+    width: 120px;
+    border-radius: 150px;
+    box-shadow: var(--shadow2);
+}
+
+.coop-con .coop-details{
+    position: relative;
+    top: 24.5%;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.coop-con .coop-details h2{
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.coop-con .coop-details h3{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+@media (max-width: 680px) {
+    .content{
+        padding: 1px;
+        max-width: fit-content;
+        margin-top: 10px;
+    }
+    
+}
+
+
+
+
+
+
+
+/* ----------------------- Coop full details ----------------------- */
+
+.coop-full-details{
+    width: 100%;
+    height: 100%;
+    /* background: var(--active-background); */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    border: var(--border);
+}
+.coop-full-details .coop-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background: var(--primary-color);
+}
+
+.coop-full-details .coop-head .coop-prof{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.coop-head .coop-prof .coop-name-owner :where(h1, p,){
+    color: white;
+}
+.coop-head .coop-prof .coop-name-owner h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.coop-head .coop-prof .coop-name-owner p{
+    font-size: 20px;
+}
+.coop-head .coop-prof .coop-name-owner small{
+    color: aqua;
+    font-size: 15px;
+}
+
+/* Coop-body */
+
+.coop-full-details .coop-body{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.coop-body .coop-contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.coop-body .coop-contacts > p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coop-full-details .coop-body .coop-summary{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+}
+.coop-full-details .coop-body h1{
+    font-weight: 600;
+}
+
+.coop-body .coop-summary > div{
+    background-color: var(--active-background);
+    flex: 1 0 200px;
+    max-height: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.coop-body .coop-summary div > img{
+    height: 80px;
+    width: fit-content;
+}
+
+.coop-body .coop-summary div > h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+.coop-body .coop-summary div p{
+    font-size: 20px;
+}
+.coop-body .coop-summary div p > .highlight{
+    color: var(--primary-color);
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.coop-body .coop-summary div h2 small{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+/* ----------------------- Coop Adds ----------------------- */
+.coop-full-details .coop-head .coop-adds{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: fit-content;
+    
+}
+
+.coop-full-details .coop-head .coop-adds span{
+    color: aqua;
+}
+.coop-full-details .coop-head .coop-adds :where(label, button){
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    border: 2px solid rgba(255, 255, 255, 0.26);
+    background-color: #ffffff00;
+    color: white;
+    font-size: 16px;
+    transition: .3s ease;
+}
+
+.coop-full-details .coop-head .coop-adds button a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.coop-full-details .coop-head :where(span, p){
+    color: white;
+}
+
+.custom-file-upload:hover {
+background-color: #e9e9e9;
+}
+
+#file-upload {
+display: none;
+}
+
+.coop-full-details .coop-head .coop-adds :where(label, button):hover{
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.226);
+}
+
+
+
+
+
+/* ----------------------- Notifications ----------------------- */
+.notification{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 30px;
+    /* background-color: var(--active-background); */
+}
+
+#filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    background-color: rgb(222, 222, 239);
+    color: var(--font-color);
+    border-radius: 100px;
+    gap: 8px;
+    height: 50px;
+    width: auto;
+    transition: var(--transition);
+    
+}
+
+#filter span{
+    color: var(--font-color);
+}
+
+.notification .notif{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    gap: 20px;
+    background-color: rgba(134, 144, 233, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.notification .notif .notif-details{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+}
+
+.notification .notif .notif-details p{
+    text-align: left;
+    width: 100%;
+}
+.notification .notif .notif-details h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.notification .notif .notif-details #time{
+    font-size: 15px;
+    color: gray;
+}
+
+
+.notification .notif #close{
+    outline: none;
+    border: none;
+    width: auto;
+    height: auto;
+    background-color: #00266800;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.notification .notif:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    background-color: rgba(134, 144, 233, 0.3);
+    box-shadow: var(--shadow2);
+}
+
+
+
+.content .add-user-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+    height: auto;
+    
+}
+.content .add-user-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow2);
+    border: var(--border);
+}
+.content .add-user-form form h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.add-user-form form > div{
+    background-color: white;
+    /* border-radius: 15px;
+    padding: 20px; */
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.content .add-user-form img{
+    width: 700px;
+    height: auto;
+    mix-blend-mode: darken;
+}
+
+.add-user-form form :where(div input, select, textarea){
+    width: 100%;
+    outline: none;
+    border: var(--border);
+    padding: 9px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: .3s ease;
+    color: var(--font-color);
+}
+.add-user-form form .basic-info-user > div{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.add-user-form form > div h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.add-user-form form > div input:hover{
+    border: 2px solid var(--secondary-color);
+}
+.add-user-form form > div input:focus, select:focus, textarea:focus{
+    border: 2px solid var(--secondary-color);
+    box-shadow: var(--shadow2)
+}
+.add-user-form form > button{
+    background-color: #002768;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+
+.breed-weight{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*----------------------- Upload Materials ---------------------------*/
+.select-coop{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--active-background);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.select-coop > div{
+    flex: 1 0 50px;
+    min-width: 150px;
+    height: fit-content;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: left;
+}
+
+
+.select-coop .options label{
+    font-size: 15px;
+}
+
+input[type="radio"]{
+    width: 17px;
+    height: 17px;
+}
+.pic{
+    width: 200px;
+}
+.coop-area{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+.coop-area h3{
+    width: 100%;
+}
+
+
+input[type="radio"]:checked{
+    accent-color: var(--primary-color);
+}
+
+
+.clear-upload > button{
+    background-color: var(--base-color);
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+.clear-upload > :nth-child(2){
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+
+
+
+/*  ----------------------- Analytics ----------------------- */ 
+
+
+.coop-summary{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px 30px 0 30px;
+}
+
+@media (max-width:680px){
+    .coop-summary{
+        padding-top: 9rem;
+    }
+}
+.coop-body h1{
+    font-weight: 600;
+}
+
+.coop-summary > div{
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 200px;
+    max-height: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    gap: 20px;
+    transition: 0.3s all ease;
+}
+
+.coop-summary div > img{
+    height: 60px;
+    width: fit-content;
+}
+
+.coop-summary div > h2{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--active);
+}
+.coop-summary div p{
+    font-size: 20px;
+}
+.coop-summary div p > .highlight{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.coop-summary div h2 small{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+
+
+.analytics{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.analytics .insights{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 30px;
+    gap: 30px;
+}
+
+.analytics .insights > div{
+    flex: 1 0 200px;
+    width: 100%;
+    background-color: var(--active-background);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 15px;
+    transition: 0.3s all ease;
+}
+.analytics .insights > div.healthy{
+    background-color: #e4fae6;
+}
+.analytics .insights > div.unhealthy{
+    background-color: #fae0e0;
+}
+.analytics .insights > div.under-observation{
+    background-color: #FFF2EC;
+}
+
+.analytics .insights > div .middle{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.analytics .insights .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+.analytics .insights svg{
+    width: 92px;
+    height: 92px;
+}
+
+.analytics .insights svg circle{
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 120;
+    stroke-dashoffset: 100;
+    transform: translate(5px, 5px);
+}
+
+.analytics .insights .healthy svg circle{
+    stroke: #55A55E;
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.analytics .insights .unhealthy svg circle{
+    stroke: #D83B3B;
+    stroke-dashoffset: 10;
+    stroke-dasharray: 80;
+}
+
+.analytics .insights .under-observation svg circle{
+    stroke: #9B715D;
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+}
+
+.analytics .insights .progress .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.analytics .insights > div .middle .right{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+    height: fit-content;
+    
+}
+.analytics .insights > div .middle .right h2{
+    line-height: 25px;
+}
+.analytics .insights > div .middle .right h3{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+
+.analytics .insights .healthy .middle .right :where(h3, h2, span){
+    color: #55A55E;
+
+}
+.analytics .insights .unhealthy .middle .right :where(h3, h2, span){
+    color: #D83B3B;
+}
+.analytics .insights .under-observation .middle .right :where(h3, h2, span){
+    color: #9B715D;
+}
+
+.analytics .insights > div:hover, .coop-summary > div:hover{
+    transform: scale(1.03);
+    box-shadow: var(--shadow2);
+}
+
+
+.registeredCoop{
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+}
+.registeredCoop > div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 30px;
+}
+@media (max-width: 680px){
+    .registeredCoop{
+        flex-direction: column;
+    }
+}
+.registeredCoop > div .box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.registeredCoop > div .box div{
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 10px;
+    border-radius: 50px;
+    transition: var(--transition);
+    justify-content: space-between;
+}
+.registeredCoop > div .box div h3{
+    font-weight: 600;
+}
+
+.registeredCoop > div .box div p{
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--active);
+}
+.registeredCoop .car-gender .box{
+    height: 100%;
+    gap: 30px;
+}
+.registeredCoop .car-gender .box > div{
+    padding: 0 80px;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.registeredCoop > div .box div:hover{
+    transform: scale(1.05);
+    box-shadow: var(--shadow2);
+}
+.registeredCoop div h2{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.linegraph{
+    width: 100%;
+    height: 450px;
+    padding: 30px;
+
+}
+.bar-donut{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 450px;
+    padding: 30px;
+}
+
+.bar-donut :where(.bar, .donut){
+    width: 50%;
+    height: 100%;
+}
+
+@media (max-width: 680px){
+    .linegraph{
+        width: 100%;
+        height: 450px;
+        padding: 30px;
+        flex-direction: column;
+    }
+    .bar-donut{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        height: 450px;
+        padding: 30px;
+        flex-direction: column;
+    }
+    
+    .bar-donut :where(.bar, .donut){
+        width: 50%;
+        height: 100%;
+    }
+}
+
+
+
+
+
+/* ----------------------- Aside -----------------------*/
+aside{
+    background: white;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    justify-content: flex-start;
+    box-shadow: var(--shadow2);
+    
+}
+
+aside > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+aside > div .recUp-con {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    overflow-y: auto;
+}
+aside > div .recUp-con .recUp{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+    padding: 10px;
+}
+aside > div .recUp-con .recUp img{
+    width: 40px;
+}
+aside > div .recUp-con .recUp .recUp-details{
+    text-align: left;
+}
+aside > div h2{
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+aside > div .recUp-con .recUp .recUp-details p{
+    font-size: 12px;
+    text-align: left;
+}
+aside > div .recUp-con .recUp .recUp-details p span{
+    font-size: 12px;
+    font-weight: 600;
+}
+aside > div .recUp-con .recUp .recUp-details small{
+    font-size: 10px;
+    text-align: left;
+}
+
+aside > div .recUp-con .top-performer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    gap: 15px;
+    padding: 20px 10px;
+    justify-content: space-between;
+}
+
+aside > div .recUp-con .top-performer h1{
+    font-weight: 600;
+    font-size: 20px;
+}
+.coopDetails{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+}
+.coopDetails p{
+    font-weight: 500;
+}
+aside > div .recUp-con .top-performer .performance{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside > div .recUp-con .top-performer .performance :where(h4, span){
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--active);
+}
+@media (max-width:680px) {
+    aside{
+        width: 100%;
+        display: none;
+    }
+}
+
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgba(134, 144, 233, 0.25);;
+    border-radius: 50px;
+    cursor: -webkit-grabbing;
+    transition: var(--transition);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(134, 144, 233, 1);
+}
+
+
+/* ----------------------- Cooperative ----------------------- */
+
+.content{
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Cooperative Container */
+.content .coop-con{
+    position: relative;
+    flex: 1 0 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 440px;
+    height: 375px;
+    background-color: white;
+    border-radius: 15px;
+    border: var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.content .coop-con:hover{
+    scale: 1.02;
+    
+}
+
+.coop-con .color{
+    display: flex;
+    justify-content: end;
+    padding: 15px 5px;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primary-color);
+}
+
+.color span{
+    font-size: 45px;
+    font-weight: 900;
+    color: white;
+}
+
+.coop-con .coop-profile{
+    position: absolute;
+    top: 23.3%;
+    width: 120px;
+    border-radius: 150px;
+    box-shadow: var(--shadow2);
+}
+
+.coop-con .coop-details{
+    position: relative;
+    top: 24.5%;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.coop-con .coop-details h2{
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.coop-con .coop-details h3{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@media (max-width: 680px) {
+    .content .coop-con {
+        padding: 0px;
+        max-width: 100%;
+        margin: 0 auto; 
+        margin-top: 0px;
+    }
+
+    .content .color{
+        max-width: 100%;
+    }
+
+    .coop-full-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coop-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .coop-prof {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coop-name-owner h1, 
+    .coop-name-owner p, 
+    .coop-name-owner small {
+        margin: 5px 0;
+    }
+
+    .coop-adds {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .coop-adds button {
+        flex: 1 1 calc(50% - 20px);
+        margin: 5px;
+    }
+
+    .coop-body {
+        width: 100%;
+    }
+
+    .coop-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coop-contacts p {
+        margin: 5px 0;
+    }
+
+    .coop-summary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+        margin-top: -150px;
+    }
+
+    .coop-summary > div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .coop-summary img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .coop-summary h2 {
+        font-size: 24px;
+    }
+    
+    .coop-con {
+        max-width: 100%;
+    }
+}
+
+
+
+
+@media (max-width: 680px) {
+    .notification {
+        padding-top: 1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative; 
+    }
+
+    .notif {
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .notif img {
+        width: 70px;
+        margin-bottom: 15px; 
+    }
+
+    .notif-details {
+        text-align: center; 
+    }
+
+    .notif-details p {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 5px; 
+    }
+
+    .notif-details h3 {
+        font-size: 14px; 
+        margin-bottom: 5px; 
+
+    }
+}

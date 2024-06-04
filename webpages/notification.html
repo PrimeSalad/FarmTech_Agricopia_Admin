@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../design.css">
+    <link rel="icon" type="image/x-icon" href="../images/ftalogo.png">
+    <link rel="stylesheet" href="https://lucide.dev/icons/">
+
+    <title>Dashboard - FTA</title>
+</head>
+<body>
+    <!-- Navigational Bar -->
+    <span class="material-symbols-rounded menu" onclick="showMenu()">menu</span> 
+    <div class="sidebar">
+        <!-- Logo -->
+       
+
+        <!-- User Profile -->
+        <div class="user">
+            <img class="profile-pic" src="../images/profile.png" alt="">
+            <h2 id="name">Elpie Landoy</h2>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls" id = "psidebar">
+            <a href="../dashboard.html"><span class="material-symbols-rounded">grid_view</span><p>Dashboard</p></a>
+            <a href="cooperative.html"><span class="material-symbols-rounded">handshake</span><p>Cooperative</p></a>
+            <a href="analytics.html"><span class="material-symbols-rounded">pie_chart</span><p>Analytics</p></a>
+            <a href="notification.html"class="active"><span class="material-symbols-rounded active-icon">notifications</span><p>Notifications</p></a>
+            <a href="#"><span class="material-symbols-rounded">settings</span><p>Settings</p></a>
+            <a href="../index.html"><span class="material-symbols-rounded">logout</span><p>Log out</p></a>
+        </div>
+    </div>
+    <div class="psidebar" id="sidebar">
+        <!-- Logo -->
+        <span class="material-symbols-rounded hide"  onclick="hideMenu()">close</span>
+        <div class="user">
+            <img class="profile-pic" src="../images/profile.png" alt="">
+            <h2 id="name">Elpie Landoy</h2>
+        </div>
+        <!-- Controls -->
+        <div class="controls">
+            <a href="../dashboard.html"><span class="material-symbols-rounded">grid_view</span><p>Dashboard</p></a>
+            <a href="cooperative.html" ><span class="material-symbols-rounded ">handshake</span><p>Cooperative</p></a>
+            <a href="analytics.html"><span class="material-symbols-rounded">pie_chart</span><p>Analytics</p></a>
+            <a href="notification.html" class="active"><span class="material-symbols-rounded active-icon">notifications</span><p>Notifications</p></a>
+            <a href="#"><span class="material-symbols-rounded">settings</span><p>Settings</p></a>
+            <a href="../index.html"><span class="material-symbols-rounded">logout</span><p>Log out</p></a>
+        </div>
+    </div>        
+     <!-- Main Content -->
+     <div class="container">
+        <!-- Head -->
+        <div class="head">
+            <h1>Notifications</h1>
+            <div class="head-control">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <span class="material-symbols-rounded">search</span>
+                </div>
+                <a id="backBtn"><span class="material-symbols-rounded">arrow_back</span></a>
+            </div>
+        </div>
+        
+        <!-- Content --><br>
+        
+                <div class="notification">
+                    <div class="notif">
+                        <button type="button" id="close" class="close-button"><span class="material-symbols-rounded">close</span></button>
+                        <img src="../images/pfp.png" alt="" width="110px">
+                        <div class="notif-details">
+                            <h3 id="coop-name">Mikhaela Janna Jimenea Lim</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p id="time">1 hour ago</p>
+                        </div>
+                    </div>
+
+                    <div class="notif">
+                        <button type="button" id="close"><span class="material-symbols-rounded">close</span></button>
+                        <img src="../images/pfp1.png" alt="" width="110px">
+                        <div class="notif-details">
+                            <h3 id="coop-name">Mary Loi Yves Ricalde</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p id="time">1 hour ago</p>
+                        </div>
+                    </div>
+
+                    <div class="notif">
+                        <button type="button" id="close" class="close-button"><span class="material-symbols-rounded">close</span></button>
+                        <img src="../images/pfp2.png" alt="" width="110px">
+                        <div class="notif-details">
+                            <h3 id="coop-name">Aiah Maraiah Queen Arceta</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p id="time">1 hour ago</p>
+                        </div>
+
+                    </div>
+
+                    <div class="notif">
+                        <button type="button" id="close" class="close-button"><span class="material-symbols-rounded">close</span></button>
+                        <img src="../images/pfp3.png" alt="" width="110px">
+                        <div class="notif-details">
+                            <h3 id="coop-name">Maria Nicolette Vergara</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p id="time">1 hour ago</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+        <!-- Content -->
+        
+    </div>
+
+    <script src="../script.js"></script>
+        
+</body>
+</html>

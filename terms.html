@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <link rel="icon" type="image/x-icon" href="images/ftalogo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #002768;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        p, ul {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .terms-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .terms-container input {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            background-color: #002768;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p, ul {
+                font-size: 16px;
+            }
+
+            ul {
+                padding-left: 15px;
+            }
+
+            .terms-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .terms-container label {
+                margin-top: 10px;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Terms and Conditions</h1>
+        <p><strong>1. Introduction</strong><br>
+        FarmTech Agricopia Admin is committed to protecting the privacy of our users. This Privacy Policy Statement outlines how we collect, use, and disclose your personal information when you use our FarmTech Agricopia Admin comprehensive farming dashboard. We adhere to relevant Philippine data privacy laws and regulations.</p>
+
+        <p><strong>2. Information We Collect</strong><br>
+        We collect several types of information to provide and improve the Service:
+        <ul>
+            <li>User Account Information: Personal information you provide when registering for an account, such as name, email address, and password.</li>
+            <li>Farm Data: Information you enter about your farm, including location, size, and crop types.</li>
+            <li>Market Information: Data you choose to integrate regarding market prices and trends.</li>
+            <li>Device Information: Automatically collected information about your device, such as IP address and operating system.</li>
+        </ul>
+        We may collect information through various methods:
+        <ul>
+            <li>Directly from you when you create an account or use the Service.</li>
+            <li>From sensors or devices connected to the Service with your permission.</li>
+        </ul></p>
+
+        <p><strong>3. How We Use Your Information</strong><br>
+        We use your information to:
+        <ul>
+            <li>Offer features like farm data management tools and farm crop market integration.</li>
+            <li>Send you important updates and notifications about the Service.</li>
+            <li>Improve the overall user experience of the Service.</li>
+        </ul>
+        We will only use your information for the purposes described in this Privacy Policy Statement or with your express consent.</p>
+
+        <p><strong>4. Sharing Your Information</strong><br>
+        We may share your information with third parties under the following circumstances:
+        <ul>
+            <li>Service providers who help us operate the Service, such as data storage and analytics providers.</li>
+            <li>Government entities if required by law.</li>
+        </ul>
+        We will obtain your consent before sharing your information with any third party for marketing purposes.</p>
+
+        <p><strong>5. Data Security</strong><br>
+        We take reasonable steps to protect your information from unauthorized access, disclosure, alteration, or destruction. These include:
+        <ul>
+            <li>Secure data storage practices.</li>
+            <li>Access controls and encryption.</li>
+        </ul></p>
+
+        <p><strong>6. User Rights and Choices</strong><br>
+        You have certain rights regarding your information:
+        <ul>
+            <li>Accessing and correcting your personal information.</li>
+            <li>Opting out of receiving marketing communications.</li>
+            <li>Deactivating your account.</li>
+        </ul>
+        We will provide you with reasonable mechanisms to exercise these rights.</p>
+
+        <p><strong>7. Changes to Our Privacy Policy</strong><br>
+        We may update this Privacy Policy Statement from time to time. We will notify you of any changes by posting the new Privacy Policy Statement on the Service.</p>
+
+        <p><strong>8. Contact Us</strong><br>
+        If you have any questions about this Privacy Policy Statement, please contact us at farmtechagri@gmail.com.</p>
+
+        <div class="terms-container">
+            <input type="checkbox" id="termsCheckbox">
+            <label for="termsCheckbox">I agree to the terms and conditions</label>
+        </div>
+        <button id="acceptButton" disabled>Continue</button>
+    </div>
+    <script>
+        const termsCheckbox = document.getElementById('termsCheckbox');
+        const acceptButton = document.getElementById('acceptButton');
+
+        termsCheckbox.addEventListener('change', function() {
+            acceptButton.disabled = !termsCheckbox.checked;
+        });
+
+        acceptButton.addEventListener('click', function() {
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
